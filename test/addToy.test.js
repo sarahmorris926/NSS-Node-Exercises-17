@@ -1,5 +1,5 @@
 'use strict';
-const { createTables } = require('../js/makeTable');
+const { createTables } = require('../js/createDB/makeTable');
 const { assert: {isFunction, isObject, isArray, equal} } = require('chai');
 
 const { addToy } = require('../js/addToy.js')
@@ -19,6 +19,11 @@ describe('Add Toy Module', () => {
         it('should be a function', () => {
             isFunction(addToy);
         });
+        it('should return an object', () => {
+            return addToy(newToy).then(data => {
+                isObject(data);
+            })
+        })
         it('should add a toy to the db', () => {
             return addToy(newToy).then(obj => {
                 equal(5, obj.id);

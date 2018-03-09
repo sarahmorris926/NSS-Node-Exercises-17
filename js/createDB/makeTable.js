@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database("santasWorkshop.sqlite");
-const { toyBag } = require('../data/toyBag');
+const { toyBag } = require('../../data/toyBag');
 
 module.exports.createTables = () => {
     return new Promise( (resolve, reject) => {
