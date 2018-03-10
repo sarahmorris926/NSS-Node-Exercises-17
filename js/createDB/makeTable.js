@@ -5,7 +5,7 @@ const { toyBag } = require('../../data/toyBag');
 module.exports.createTables = () => {
     return new Promise( (resolve, reject) => {
         db.run(`DROP TABLE IF EXISTS toyBag`)
-        .run(`CREATE TABLE IF NOT EXISTS toyBag (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, toy TEXT, delivered TEXT)`, (err) => {
+        .run(`CREATE TABLE IF NOT EXISTS toyBag (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, toy TEXT, delivered INTEGER)`, (err) => {
             if (err) return reject(err);
             resolve(insertRows());
         })

@@ -2,21 +2,21 @@ module.exports.toyBag = [
     {
         name: "Steve",
         toy: "plane",
-        delivered: "false"
+        delivered: 0
     },
     {
         name: "Joe",
         toy: "Computer",
-        delivered: "false"
+        delivered: 0
     },
     {
         name: "Hunter",
         toy: "kite",
-        delivered: "false"
+        delivered: 0
     },
     {
         name: "Emily",
         toy: "paint set",
-        delivered: "false"
+        delivered: 0
     }
 ];
