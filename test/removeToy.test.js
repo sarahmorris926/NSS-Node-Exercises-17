@@ -1,7 +1,7 @@
 const {createTables} = require('../js/createDB/makeTable');
 const {assert: {notPropertyVal}} = require('chai');
 const removeToy = require('../js/removeToy');
-const getChildrenNames = require('../js/getChildrenNames');
+const getByName = require('../js/getByName');
 
 describe('removing toy', () => {
     afterEach((done) => {
@@ -15,7 +15,7 @@ describe('removing toy', () => {
         let name = "Ash";
         return removeToy(name, toy)
         .then(data => {
-            return getChildrenNames(name);
+            return getByName(name);
         })
         .then(toyBag => {
             toyBag.forEach(toy => {

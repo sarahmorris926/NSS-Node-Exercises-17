@@ -1,7 +1,7 @@
 const {createTables} = require('../js/createDB/makeTable');
 const {assert: {propertyVal}} = require('chai');
 const setDeliveredStatus = require('../js/delivered');
-const getChildrenNames = require('../js/getChildrenNames');
+const getByName = require('../js/getByName');
 
 describe('deliver a toy', () => {
     let name = 'Steve';
@@ -14,7 +14,7 @@ describe('deliver a toy', () => {
     it('should update delivered status to 1 for all of a certain kid\'s toy', () => {
         return setDeliveredStatus(name)
         .then(data => {
-            return getChildrenNames(name);
+            return getByName(name);
         })
         .then(toyBag => {
             toyBag.forEach(toy => {
